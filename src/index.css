@@ -24,26 +24,11 @@ li {
 }
 
 
-.togglediv {
-    visibility: hidden;
-    overflow: hidden;
-    opacity: 0;
-    max-height: 0;
-    transition: all 1s ease;
-
-}
-
 #toggle {
     display: none;
 }
 
-input:checked~div {
-    visibility: visible;
-    overflow: hidden;
-    opacity: 1;
-    max-height: 100vh;
 
-}
 
 .customRadio {
     -webkit-appearance: none;

@@ -8,6 +8,7 @@ const Menu = () => {
     const [icon, seticon] = useState(true)
     const handleIcon = () => {
         seticon((perv) => !perv)
+
     }
 
     return (
@@ -52,10 +53,10 @@ const Menu = () => {
                 })}
             </div>
             <div className='toggle mt-8'>
-                <label htmlFor='toggle' className='label flex items-center gap-1 cursor-pointer' onClick={handleIcon}>Addons {icon ? <BiSolidDownArrow /> : <BiSolidUpArrow />}</label>
+                <label htmlFor='toggle' className='label flex items-center gap-1 cursor-pointer' onClick={handleIcon}>Addons {icon ? <BiSolidUpArrow /> : <BiSolidDownArrow />}</label>
                 <input type='checkbox' id="toggle" />
                 <div className='border-2 rounded-2xl  border-Dark_Gray p-4 mt-4 togglediv'>
-                    <div className='grid grid-cols-3 gap-6 '>
+                    {icon ? <div className='grid grid-cols-3 gap-6 '>
                         {Addons.map((item, index) => (
 
                             <div key={index} className='flex items-center justify-between border-Dark_Gray border-2 py-4 px-3 rounded-2xl  '>
@@ -64,7 +65,9 @@ const Menu = () => {
                             </div>
 
                         ))}
-                    </div>
+                    </div> : ""}
+
+
                     <div className='grid grid-cols-2 gap-6 mt-8' >
                         {region.slice(5, 7).map((item, index) => {
                             return (
